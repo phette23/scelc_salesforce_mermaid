@@ -1,0 +1,64 @@
+<head>
+    <title>SCELC Salesforce Conceptual Diagram</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <pre id="diagram" class="mermaid">
+    flowchart TD
+        Contacts["`**Contacts**
+        Individuals.
+        <br>Examples: Phette, Audre Lorde`"]
+
+        PA["`**Program Association**
+        Start/end dates, Active or Former`"]
+        OA["`**Organization Association**
+        Start/end dates, Active or Former`"]
+
+        Programs["`**Programs**
+        Committees, other organizational groups, ongoing projects, or offers.
+        <br>Examples: JDSS, Shared Print Steering Committee`"]
+        Accounts["`**Accounts**`"]
+
+        Institutions["`**Institutions**
+        Libraries.
+        <br>Examples: Caltech Libraries, Occidental`"]
+        Vendors["`**Vendors**
+        <br>Examples: EBSCO, JSTOR`"]
+        Organizations["`**Organizations**
+        Entities SCELC interacts with professionally, but does not do business with.
+        <br>Examples: Atla, Orbis Cascade`"]
+        Suppliers["`**Suppliers**
+        Entities that provide services to SCELC.
+        <br>Examples: WeWork, Pentegra`"]
+
+        Contacts ---|"Can participate in zero or more programs"| PA
+        PA --- Programs
+
+        Contacts ---|"Must have at least one"| OA
+        OA ---|"Connects people to accounts, such as their employer"| Accounts
+
+        Accounts ---|"record type"| Institutions
+        Accounts ---|"record type"| Vendors
+        Accounts ---|"record type"| Organizations
+        Accounts ---|"record type"| Suppliers
+  </pre>
+<script src="node_modules/mermaid/dist/mermaid.min.js">
+mermaid.initialize({ startOnLoad: true });
+</script>
+<style>
+body #diagram .edgeLabel {
+    background-color: lightblue;
+}
+body #diagram .edgeLabel p {
+    background-color: lightblue;
+    border-radius: 10px 10px;
+    padding: .3em;
+}
+body #diagram .labelBkg {
+    background: 0;
+}
+strong {
+    font-size: 120%;
+}
+</style>
+</body>

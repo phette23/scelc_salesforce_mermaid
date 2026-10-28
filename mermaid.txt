@@ -1,0 +1,37 @@
+flowchart TD
+        Contacts["`**Contacts**
+        Individuals.
+        <br>Examples: Phette, Audre Lorde`"]
+
+        PA["`**Program Association**
+        Start/end dates, Active or Former`"]
+        OA["`**Organization Association**
+        Start/end dates, Active or Former`"]
+
+        Programs["`**Programs**
+        Committees, other organizational groups, ongoing projects, or offers.
+        <br>Examples: JDSS, Shared Print Steering Committee`"]
+        Accounts["`**Accounts**`"]
+
+        Institutions["`**Institutions**
+        Libraries.
+        <br>Examples: Caltech Libraries, Occidental`"]
+        Vendors["`**Vendors**
+        <br>Examples: EBSCO, JSTOR`"]
+        Organizations["`**Organizations**
+        Entities SCELC interacts with professionally, but does not do business with.
+        <br>Examples: Atla, Orbis Cascade`"]
+        Suppliers["`**Suppliers**
+        Entities that provide services to SCELC.
+        <br>Example: WeWork, Pentegra`"]
+
+        Contacts ---|"Can participate in zero or more programs"| PA
+        PA --- Programs
+
+        Contacts ---|"Must have at least one"| OA
+        OA ---|"Connects people to accounts, such as their employer"| Accounts
+
+        Accounts ---|"record type"| Institutions
+        Accounts ---|"record type"| Vendors
+        Accounts ---|"record type"| Organizations
+        Accounts ---|"record type"| Suppliers
