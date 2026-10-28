@@ -1,6 +1,5 @@
 <head>
     <title>SCELC Salesforce Conceptual Diagram</title>
-    <link rel="stylesheet" href="main.css">
 </head>
 <body>
   <pre id="diagram" class="mermaid">
@@ -42,8 +41,9 @@
         Accounts ---|"record type"| Organizations
         Accounts ---|"record type"| Suppliers
   </pre>
-<script src="node_modules/mermaid/dist/mermaid.min.js">
-mermaid.initialize({ startOnLoad: true });
+<script src="node_modules/mermaid/dist/mermaid.min.js"></script>
+<script>
+mermaid.initialize({ startOnLoad: true })
 </script>
 <style>
 body #diagram .edgeLabel {
